@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toxic Release</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,visualization&sensor=false"></script>
+    <script type="text/javascript" src = "js/script.js"></script>
+    <script type="text/javascript" src="js/squel.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+    <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
+  </head>
+  <body>
+    <div id="panel">
+      <div id="panel_collapse">
+        <input type="button" class = "Button" id = "col_exp" value="-">
+        <input type="button" class = "Button" id = "FullExtent" value="Full Extent" onclick="FullExtent()">
+        <input type="button" class = "Button" id = "run" value="Run" onclick="Run()">
+      </div>
+      <div id="panel_main">
+        <b class = "Text">State: </b>
+        <select id="State" class = "Select" onchange = "ClickState()">
+          <option value="0">All</option>
+        </select>
+        <br>
+        <b class = "Text">County: </b>
+        <select id="County" class = "Select" onchange = "ClickCounty()">
+          <option value="1">select a state first</option>
+        </select>
+        <b class = "Text">Chemical: </b>
+        <select id="Chemical" class = "Select">
+          <option value="0">All</option>
+        </select> 
+        <hr> 
+        <input type="checkbox" class = "Checkbox" id="Point" value="Point">TRI Facilities<br>    
+        <input type="checkbox" class = "Checkbox" id="HeatmapLayer" value="Heatmap" onchange = "HeatCheck()">Heatmap<br>
+        <div id = "ColHeat">
+          <b class = "Text1">Radius: </b>
+          <input type="range" id = "radiusbar" min="0" max="50" value="25" onchange="UpdateSliderbar1(this.value)">
+          <span class = "barlabel" id="range1">25px</span>  
+          <b class = "Text1">Opacity: </b>
+          <input type="range" id = "opacitybar" min="0.0" max="1.0" Step = "0.05" value="0.6" onchange="UpdateSliderbar2(this.value)"> 
+          <span class = "barlabel" id="range2">0.6</span> 
+          <form action="">
+            <input type="radio" class = "Radiobutton0" name="heatmapRadio" id = "HeatmapPnt" value="Point" onchange = "PointRadio()">TRI Facility Density<br>
+            <input type="radio" class = "Radiobutton0" name="heatmapRadio" value="Toxic Emission" id = "ToxicEmi" onchange = "ToxicEmiRadio()">Toxic Emission Density<br>
+        </div>
+        <div id = "ColToxic">
+              <form action="">
+                <input type="radio" class = "Radiobutton1" name="ToxicRadio" value="FugitiveAirEmissions">Fugitive Air Emissions<br>
+                <input type="radio" class = "Radiobutton1" name="ToxicRadio" value="PointSourceAirEmissions">Point Source Air Emissions<br>
+                <input type="radio" class = "Radiobutton1" name="ToxicRadio" value="SurfaceWaterDischarges">Surface Water Discharges<br>
+                <input type="radio" class = "Radiobutton1" name="ToxicRadio" value="TotalOnsiteLandReleases">On-site Land Releases<br>   
+                <input type="radio" class = "Radiobutton1" name="ToxicRadio" value="TotalEmissions">Total Emissions<br>     
+              </form>
+          </form>
+        </div>
+        <input type="checkbox" class = "Checkbox" id="PopulationLayer" value="Population" onchange = "PopCheck()">Population Density<br> 
+        <div id = "ColPop">
+          <input type="radio" class = "Radiobutton2" name="PopulationRadio" id="CountyRadio" value="County">US County<br>
+          <input type="radio" class = "Radiobutton2" name="PopulationRadio" id="CountyPointRadio" value="CountyPoint">US County Points<br> 
+          <input type="radio" class = "Radiobutton2" name="PopulationRadio" id="CensusTractRadio" value="CensusTract">US Census Tract<br>        
+          <input type="radio" class = "Radiobutton2" name="PopulationRadio" id="TractPointRadio" value="TractPoint">US Census Tract Points<br>
+        </div>
+
+        <input type="checkbox" class = "Checkbox" id="RasterLayer" value="Raster">Raster<br> 
+        <div id = "ColRaster">
+          <b class = "Text1">Resolution: </b>
+          <br>
+          <input type="range" id = "resolutionbar" min="0" max="1" value="0.5" Step = "0.01" onchange="UpdateSliderbar3(this.value)">
+          <span class = "barlabel" id="range3">0.5degree</span>
+        </div>
+      </div>
+    </div>
+    <div id="map-canvas"></div>
+    <div id="legend"><h3>Facility Density Legend</h3>
+      <div id="img">
+        <img src=HighToLow.PNG>
+      </div>
+      <div id="num">
+        <p id="max">100</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>0</p> 
+      </div>
+    </div>
+  </body>
+</html>

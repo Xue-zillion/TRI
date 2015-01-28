@@ -1,0 +1,11 @@
+<ScreenOverlay>
+<name>Legend: TractPoint</name>
+<Icon> <href>http://www.zillioninfo.com/demo/TRI/CensusTractPointLegend.PNG</href>
+</Icon>
+<overlayXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+<screenXY x="35" y="65" xunits="pixels" yunits="pixels"/>
+<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+<size x="0" y="0" xunits="pixels" yunits="pixels"/>
+</ScreenOverlay>
+
+https://www.googleapis.com/fusiontables/v1/query?sql=SELECT Latitude,Longitude,SUM(FugitiveAirEmissions) FROM 1N_u40dqpPglemwK0VbR0wh4brZ3dFrl5FwCOx-IQ GROUP BY Name,Latitude,Longitude&key=AIzaSyClmT0--eBE_r40OoRILf0m1wNhSQ8ueow

@@ -1,0 +1,219 @@
+html, body, #map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#panel{
+	position: absolute;
+	float: left;
+	top: 12px;
+	left: 4%;
+	margin-left: -180px;
+	z-index: 1;
+	background: rgba(209,209,209, 0.8);
+	padding: 10px;
+	border: 1px solid #999;	
+	margin: 10px;
+	border-radius: 6px;
+	width: 230px; 
+}
+
+.Select{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 220px;
+	padding: 5px;
+/*	font-family:helvetica-roman;*/
+	font-size: 14px;
+	line-height: 1;
+	border: 0;
+	border-radius: 4px;
+	height: 28px;
+	cursor:pointer;
+    text-overflow: '';
+    max-width: 150px;
+}
+
+
+.Select option{
+	width: 220px;
+}
+
+#State{
+	margin-left: 28px;
+}
+
+#County{
+	margin-left: 13px;
+}
+
+.Button{
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:6px 14px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+	margin-top: 5px;
+	margin-bottom: 5px;
+/*	width: 110px;*/
+}
+
+.Button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+	background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+	background-color:#378de5;
+}
+
+.Button:active {
+	position:relative;
+	top:1px;
+}
+
+
+/*#County{
+	visibility: hidden;
+}
+
+#CountyText{
+	visibility: hidden;
+}
+*/
+.Checkbox{
+    width:19px;
+    height:19px;
+    margin:1px 4px 0 0;
+    vertical-align:bottom;
+    cursor:pointer;
+    margin-top: 8px;
+}
+
+.Radiobutton0{
+	margin-left: 15px;
+}
+
+.Radiobutton1{
+	margin-left: 35px;
+}
+
+.Radiobutton2{
+	margin-left: 15px;
+}
+
+#radiusbar{
+	margin-top: 10px;
+	margin-left: 15px;
+	width: 85px;
+}
+
+#resolutionbar{
+	width: 85px;
+	margin-left: 12px;
+} 
+
+#opacitybar{
+	margin-top: 8px;
+	margin-left: 10px;	
+	width: 85px;
+}
+
+.Text1{
+	vertical-align: 7px;
+	margin-left: 10px;
+}
+
+.barlabel{
+	font-style: italic;
+	vertical-align: 5px;
+}
+
+#legend {
+	font-family: Arial, sans-serif;
+	background: #fff;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid #000;
+	display: none;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	width: 100px;
+}
+
+#legend h3 {
+	margin-top: 0;
+}
+
+#legend img {
+	height:100px;
+	width:40px;
+}
+
+#img{
+	float: left;
+	width: 20px;
+}
+#num{
+	float: right;
+	margin-right: 30px;
+	height: 100px;
+}
+#num p{
+	margin-top: 0px;
+}
+
+#ColPop, #ColRaster, #ColHeat, #ColToxic{
+	display: none;
+}
+
+#legend1 {
+	background-color: #FFF;
+	margin: 10px;
+	padding: 5px;
+	width: 200px;
+	margin-left: 40px;
+	margin-bottom: 30px;
+	border-radius: 5%;
+}
+
+#legend1 p {
+	font-weight: bold;
+	margin-top: 3px;
+	margin-left: 6px;
+	font-size: 15px;
+}
+
+#legend1 div {
+	clear: both;
+	margin: 8px;
+	font-size: 13px;
+}
+
+.color {
+	height: 15px;
+	width: 15px;
+	margin-right: 3px;
+	float: left;
+	display: block;
+}
+.colorcircle{
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	margin-right: 3px;
+	float: left;
+	display: block;
+}
